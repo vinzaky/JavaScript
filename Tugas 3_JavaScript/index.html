@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Eksternal</title>
+    <link rel="stylesheet" href="css/sytle.css">
+</head>
+<body>
+    <form id="frm">
+        <table>
+            <tr>
+                <th colspan="2">Form Input</th>
+            </tr>
+            <tr>
+                <td><label for="nama">Nama</label></td>
+                <td><input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda"></td>
+            </tr>
+            <tr>
+                <td><label for="pekerjaan">Pekerjaan</label></td>
+                <td><input type="text" id="pekerjaan" name="pekerjaan" placeholder="Masukkan pekerjaan Anda"></td>
+            </tr>
+            <tr>
+                <td><label for="hobi">Hobi</label></td>
+                <td><input type="text" id="hobi" name="hobi" placeholder="Masukkan hobi Anda"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button type="button" onclick="dataPerson()">Submit</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <center id="hasil"></center>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
