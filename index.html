@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Pegawai</title>
+
+  </head>
+  <body>
+    <h2 align="center">Data Pegawai PT. Putri Permata</h2>
+
+    <table border="1" align="center" cellpadding="10" cellspacing="0" width="50%">
+      <thead>
+        <tr>
+          <th>Nama Pegawai</th>
+          <th>Jabatan</th>
+          <th>Status</th>
+          <th>Gaji Pokok</th>
+          <th>Tunjangan Jabatan</th>
+          <th>BPJS</th>
+          <th>Tunjangan Keluarga</th>
+          <th>Total Gaji</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td id="namaPegawai"></td>
+          <td id="jabatanPegawai"></td>
+          <td id="statusPegawai"></td>
+          <td id="gajiPokok"></td>
+          <td id="tunjanganJabatan"></td>
+          <td id="bpjs"></td>
+          <td id="tunjanganKeluarga"></td>
+          <td id="totalGaji"></td>
+        </tr>
+      </tbody>
+
+      <tfoot bgcolor="orange">
+        <tr>
+          <th colspan="7">Total Gaji</th>
+          <th id="totalGajiFoot"></th>
+        </tr>
+      </tfoot>
+    </table>
+
+    <script>
+      var pegawai = {
+        nama: "Ridwan",
+        jabatan: "manager",
+        status: "menikah",
+      };
+
+      var gajiPokok = {
+        manager: 15000000,
+        "asisten manager": 10000000,
+        staff: 5000000,
+      };
+
+      var tunjanganJabatan = gajiPokok[pegawai.jabatan] * 0.15;
+      var bpjs = gajiPokok[pegawai.jabatan] * 0.1;
+      var tunjanganKeluarga = pegawai.status === "menikah" ? gajiPokok[pegawai.jabatan] * 0.2 : 0;
+      var totalGaji = gajiPokok[pegawai.jabatan] + tunjanganJabatan + bpjs + tunjanganKeluarga;
+
+      // Set nilai pada elemen HTML
+      document.getElementById("namaPegawai").innerText = pegawai.nama;
+      document.getElementById("jabatanPegawai").innerText = pegawai.jabatan;
+      document.getElementById("statusPegawai").innerText = pegawai.status;
+      document.getElementById("gajiPokok").innerText = gajiPokok[pegawai.jabatan];
+      document.getElementById("tunjanganJabatan").innerText = tunjanganJabatan;
+      document.getElementById("bpjs").innerText = bpjs;
+      document.getElementById("tunjanganKeluarga").innerText = tunjanganKeluarga;
+      document.getElementById("totalGaji").innerText = totalGaji;
+      document.getElementById("totalGajiFoot").innerText = totalGaji;
+    </script>
+  </body>
+</html>
