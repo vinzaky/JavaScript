@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 5 JavaScript</title>
+    <link rel="stylesheet" href="query.css">
+</head>
+<body>
+    <h2>Posisikan kursor di atas setiap kotak untuk melihat gambar yang terkait</h2>
+    <div id="div1">
+        ~NAGA~
+    </div>
+    <div id="div2">
+        ~ULAR~
+    </div>
+    <div id="div3">
+        ~BURUNG HANTU~
+    </div>
+
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+
+
+$(document).ready(function(){
+    // Membuat audio element dengan jQuery
+    var audio1 = $('<audio>', {
+        controls: false,
+        autoplay: false,
+        preload: 'auto'
+    }).appendTo('body');
+
+    var audio2 = $('<audio>', {
+        controls: false,
+        autoplay: false,
+        preload: 'auto'
+    }).appendTo('body');
+
+    var audio3 = $('<audio>', {
+        controls: false,
+        autoplay: false,
+        preload: 'auto'
+    }).appendTo('body');
+    
+    // Menambahkan source audio dari URL di dalam folder "audio"
+    $('<source>').attr('src', 'sound/naga.mp3').appendTo(audio1);
+    $('<source>').attr('src', 'sound/ular.mp3').appendTo(audio2);
+    $('<source>').attr('src', 'sound/burunghantu.mp3').appendTo(audio3);
+    
+    // Event handler mouseover untuk div1
+    $("#div1").mouseover(function(){
+        $(this).css({
+            background: "url('https://c4.wallpaperflare.com/wallpaper/895/811/796/the-hobbit-the-desolation-of-smaug-smaug-the-hobbit-movies-wallpaper-preview.jpg')"
+        });
+        // Memainkan audio1 saat mouseover
+        audio1.trigger('play');
+    });
+
+    // Event handler mouseout untuk semua div
+    $("div").mouseout(function(){
+        $(this).css({
+            background: "white"
+        });
+    });
+
+    // Event handler mouseover untuk div2
+    $("#div2").mouseover(function(){
+        $(this).css({
+            background: "url('https://w0.peakpx.com/wallpaper/323/900/HD-wallpaper-giant-snake-attack-building-fire-fantasy-cobra-monster-attack-snake.jpg')"
+        });
+        // Memainkan audio2 saat mouseover
+        audio2.trigger('play');
+    });
+
+    // Event handler mouseover untuk div3
+    $("#div3").mouseover(function(){
+        $(this).css({
+            background: "url('https://cdn.pixabay.com/photo/2018/10/08/14/46/bird-3732867_640.jpg')"
+        });
+        // Memainkan audio3 saat mouseover
+        audio3.trigger('play');
+    });
+});
+
+    </script>
+</body>
+</html>
